@@ -22,6 +22,7 @@
 
     --indent: 24px;
     --items: 3;
+    --anim-norm: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 }
@@ -143,6 +144,7 @@ body {
     background-color: var(--brand-hover-color);
     color: var(--white-color);
     border-color: var(--brand-hover-color);
+    transition: var(--anim-norm);
 }
 
 .btn-dark {
@@ -184,13 +186,29 @@ body {
 
 .navigation-link {
     color: var(--dark-color);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 24px;
+    padding-bottom: 28px;
+    position: relative;
 }
 
 .navigation-link:hover,
 .navigation-link:focus {
     color: var(--primary-brand-color);
+}
+
+.navigation-link.current{
+    color: var(--brand-hover-color);
+}
+
+.navigation-link.current::after{
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--brand-hover-color);
+    border-radius: 2px;
+    display: block;
+    position: absolute;
+    bottom: 0;
 }
 
 .header-contact {
@@ -210,7 +228,6 @@ body {
 .header-contact-link:hover {
     color: var(--primary-brand-color);
 }
-
 
 /*order*/
 
@@ -322,6 +339,7 @@ body {
 .customers-link:focus{
     border: 1px solid var(--brand-hover-color);
     fill: var(--brand-hover-color);
+    transition: var(--anim-norm);
 }
 
 /*socials*/
@@ -347,6 +365,7 @@ body {
 .socials-link:hover,
 .socials-link:focus{
     background-color: var(--brand-hover-color);
+    transition: var(--anim-norm);
 }
 
 .socials-link-footer{
@@ -356,6 +375,7 @@ body {
 .socials-link-footer:hover,
 .socials-link-footer:focus {
     background-color: #31D0AA;;
+    transition: var(--anim-norm);
 }
 
 /*footer*/
@@ -425,6 +445,31 @@ body {
 .portfolio-item:hover,
 .portfolio-item:focus{
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    transition: var(--anim-norm);
 }
 
+.box{
+    position: relative;
+    overflow: hidden;
+}
 
+.box:hover .overlay{
+    transform: translateY(0);
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-brand-color);
+
+    transform: translateY(100%);
+    transition: var(--anim-norm)
+}
+
+.overlay-paragraph{
+    color: var(--white-color);
+    padding: 40px 32px 164px 32px;
+}
