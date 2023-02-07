@@ -136,7 +136,7 @@ body {
     padding: 16px 32px;
     font-family: inherit;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    transition: box-shadow var(--anim-norm);
+    transition: box-shadow var(--anim-norm), background-color var(--anim-norm), border-color var(--anim-norm), color var(--anim-norm);
 }
 
 .btn:hover,
@@ -189,6 +189,7 @@ body {
     padding-top: 24px;
     padding-bottom: 28px;
     position: relative;
+    transition: color var(--anim-norm);
 }
 
 .navigation-link:hover,
@@ -223,6 +224,7 @@ body {
     color: var(--text-color);
     padding-top: 24px;
     padding-bottom: 28px;
+    transition: color var(--anim-norm);
 }
 
 .header-contact-link:hover {
@@ -234,9 +236,11 @@ body {
 .order {
     padding: 188px 0;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office.jpg');
-    background-position: right;
-    background-size: contain;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 /*features*/
@@ -333,7 +337,7 @@ body {
     border: 1px solid var(--subtle-text-color);
     border-radius: 4px;
     fill: var(--customers-color);
-    transition: fill var(--anim-norm);
+    transition: fill var(--anim-norm), border var(--anim-norm);
 }
 
 .customers-link:hover,
@@ -509,7 +513,15 @@ body {
     background-color: var(--accent-color);
     right: 24px;
     top: 24px;
+    transition: fill var(--anim-norm), background-color var(--anim-norm);
 }
+
+.btn-close:hover,
+.btn-close:focus{
+    background-color: var(--brand-hover-color);
+    fill: var(--white-color);
+}
+
 .backdrop.is-hidden {
     opacity: 0;
     visibility: hidden;
